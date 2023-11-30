@@ -32,3 +32,12 @@ function printArrayItemsWithStyles(arr, itemStyles, itemSplitter = ", ", startSt
     
     console.log(strPattern, ...mixedStyles);
 }
+
+function printColoredArrayItems(arr, itemSplitter, startStr, endStr) {
+    const items = Array.from(new Set(arr));
+    const map = new Map();
+    items.forEach(item => map.set(item, `color:${getRandomRGB()};`));
+    const styles = arr.map(item => map.get(item));
+    
+    printArray(arr, styles, itemSplitter, startStr, endStr);
+}
