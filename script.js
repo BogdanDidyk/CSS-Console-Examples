@@ -41,3 +41,7 @@ function printColoredArrayItems(arr, itemSplitter, startStr, endStr) {
     
     printArray(arr, styles, itemSplitter, startStr, endStr);
 }
+
+function printMatrixItemsWithStyles(matrix, itemStyles, itemSplitter = "", startStr = "", endStr = "") {
+    matrix.forEach(row => printArrayItemsWithStyles(row, itemStyles, itemSplitter, startStr, endStr));
+}
