@@ -17,3 +17,18 @@ function duplicate(item, length) {
         }
     }
 }
+
+function printArrayItemsWithStyles(arr, itemStyles, itemSplitter = ", ", startStr = "[", endStr = "]") {
+    const joinedStr = arr.join(`%c${itemSplitter}%c`);
+    const strPattern = `${startStr}%c${joinedStr}%c${endStr}`;
+    const len = arr.length;
+    const duplicatedStyles = duplicate(itemStyles, len);
+    const mixedStyles = [];
+    
+    for (let i = 0, j = 0; i < 2 * len; i += 2, j++) {
+        mixedStyles[i] = duplicatedStyles[j];
+        mixedStyles[i + 1] = "";
+    }
+    
+    console.log(strPattern, ...mixedStyles);
+}
