@@ -51,3 +51,7 @@ function printArrayWithHighlightedItems(arr, highlightedItemsStyles = new Map(),
 function printMatrixItemsWithStyles(matrix, itemStyles, itemSplitter = "", startStr = "", endStr = "") {
     matrix.forEach(row => printArrayItemsWithStyles(row, itemStyles, itemSplitter, startStr, endStr));
 }
+
+function printMatrixWithHighlightedItems(matrix, highlightedItemsStyles, itemSplitter = "", startStr = "", endStr = "") {
+    matrix.forEach(row => printArrayWithHighlightedItems(row, highlightedItemsStyles, itemSplitter, startStr, endStr));
+}
