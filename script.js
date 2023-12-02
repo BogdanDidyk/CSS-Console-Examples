@@ -18,6 +18,13 @@ function duplicate(item, length) {
     }
 }
 
+function getRandomRGB() {
+    const r = getRandomInteger(0, 255);
+    const g = getRandomInteger(0, 255);
+    const b = getRandomInteger(0, 255);
+    return `rgb(${r},${g},${b})`;
+}
+
 function printArrayItemsWithStyles(arr, itemStyles, itemSplitter = ", ", startStr = "[", endStr = "]") {
     const joinedStr = arr.join(`%c${itemSplitter}%c`);
     const strPattern = `${startStr}%c${joinedStr}%c${endStr}`;
