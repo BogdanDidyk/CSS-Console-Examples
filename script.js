@@ -42,6 +42,12 @@ function printColoredArrayItems(arr, itemSplitter, startStr, endStr) {
     printArray(arr, styles, itemSplitter, startStr, endStr);
 }
 
+function printArrayWithHighlightedItems(arr, highlightedItemsStyles = new Map(), itemSplitter = ", ", startStr = "[", endStr = "]") {
+    const styles = arr.map(item => highlightedItemsStyles.has(item) ? highlightedItemsStyles.get(item): "");
+
+    printArray(arr, styles, itemSplitter, startStr, endStr)
+}
+
 function printMatrixItemsWithStyles(matrix, itemStyles, itemSplitter = "", startStr = "", endStr = "") {
     matrix.forEach(row => printArrayItemsWithStyles(row, itemStyles, itemSplitter, startStr, endStr));
 }
