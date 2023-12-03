@@ -18,6 +18,10 @@ function duplicate(item, length) {
     }
 }
 
+function getRandomInteger(min = 0, max = 9) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
 function getRandomRGB() {
     const r = getRandomInteger(0, 255);
     const g = getRandomInteger(0, 255);
