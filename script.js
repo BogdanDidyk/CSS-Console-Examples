@@ -46,13 +46,13 @@ function printColoredArrayItems(arr, itemSplitter, startStr, endStr) {
     items.forEach(item => map.set(item, `color:${getRandomRGB()};`));
     const styles = arr.map(item => map.get(item));
     
-    printArray(arr, styles, itemSplitter, startStr, endStr);
+    printArrayItemsWithStyles(arr, styles, itemSplitter, startStr, endStr);
 }
 
 function printArrayWithHighlightedItems(arr, highlightedItemsStyles = new Map(), itemSplitter = ", ", startStr = "[", endStr = "]") {
     const styles = arr.map(item => highlightedItemsStyles.has(item) ? highlightedItemsStyles.get(item): "");
 
-    printArray(arr, styles, itemSplitter, startStr, endStr)
+    printArrayItemsWithStyles(arr, styles, itemSplitter, startStr, endStr)
 }
 
 function printMatrixItemsWithStyles(matrix, itemStyles, itemSplitter = "", startStr = "", endStr = "") {
