@@ -59,6 +59,12 @@ function printArrayWithHighlightedItems(arr, highlightedItemsStyles = new Map(),
     printArrayItemsWithStyles(arr, styles, itemSplitter, startStr, endStr)
 }
 
+function printHighlightedArrayItemsWithRule(arr, rule, style, itemSplitter = ", ", startStr = "[", endStr = "]") {
+    const styles = arr.map(item => rule(item) ? style: "");
+
+    printArrayItemsWithStyles(arr, styles, itemSplitter, startStr, endStr)
+}
+
 function printMatrixItemsWithStyles(matrix, itemStyles, itemSplitter = "", startStr = "", endStr = "") {
     matrix.forEach(row => printArrayItemsWithStyles(row, itemStyles, itemSplitter, startStr, endStr));
 }
@@ -77,5 +83,6 @@ const matrix = [
 printArrayItemsWithStyles(arr, ["color:green;", "color:red;"], ", ",  "arr = [");
 printColoredArrayItems(arr, ", ",  "arr = [");
 printArrayWithHighlightedItems(arr, new Map([[1, "color:red;"], [2, "color:blue;"]]), ", ",  "arr = [");
+printHighlightedArrayItemsWithRule(arr, (item) => item === 1 || item === 6, "border:1px dotted blue;", ", ",  "arr = [");
 printMatrixItemsWithStyles(matrix, "border: 1px solid black; padding:5px;");
 printMatrixWithHighlightedItems(matrix, new Map([[0, "color:red;"], [1, "color:cyan;"]]), " ");
